@@ -1,9 +1,10 @@
 package bentleyottmann;
 
-import com.sun.istack.internal.NotNull;
-import com.sun.istack.internal.Nullable;
-
 import java.util.*;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
 
 // See:
 // http://geomalgorithms.com/a09-_intersect-3.html
