@@ -11,6 +11,20 @@ import java.util.List;
 import java.util.Map;
 
 public class BentleyOttmannTest extends TestCase {
+    public void testFindIntersectionsCircle1() {
+        final List<ISegment> segments = new ArrayList<>();
+        segments.add(new Segment(new Point(-49.94664094027662, 0), new Point(-15.787002569099801, -47.40032826031562)));
+        segments.add(new Segment(new Point(-15.787002569099801, -47.40032826031562), new Point(40.30983726278252, -29.497838511202282)));
+        segments.add(new Segment(new Point(40.30983726278252, -29.497838511202282), new Point(40.30983726278253, 29.497838511202282)));
+        segments.add(new Segment(new Point(40.30983726278253, 29.497838511202282), new Point(-15.787002569099815, 47.40032826031561)));
+
+        final BentleyOttmann bentleyOttmann = new BentleyOttmann(Point::new);
+        bentleyOttmann.addSegments(segments);
+        bentleyOttmann.findIntersections();
+
+        assertEquals(0, bentleyOttmann.intersections().size());
+    }
+
     public void testFindIntersections1() {
         final List<ISegment> segments = new ArrayList<>();
         segments.add(new Segment(new Point(0.8, 6.1), new Point(11.72, 9.32)));
